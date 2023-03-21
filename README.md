@@ -1,9 +1,9 @@
 
 This is my personal website
 
-# My Project
+# My Projects
 
-This is a brief description of my project. It's purpose and what it does.
+I provide a Brief description of my private projects here.
 
 ## Installation
 
