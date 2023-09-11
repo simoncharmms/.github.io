@@ -5,10 +5,6 @@ This is my personal website
 
 I provide a Brief description of my private projects here.
 
-## Installation
-
-Instructions for installing my project.
-
 ## Usage
 
 Instructions for how to use my project.
