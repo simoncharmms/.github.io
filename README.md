@@ -3,7 +3,7 @@ This is my personal website
 
 # My Projects
 
-I provide a Brief description of my private projects here.
+I provide a Brief description of both my private and professional projects here.
 
 ## Usage
 
