@@ -15,7 +15,7 @@ If you would like to contribute to my project, please read the CONTRIBUTING.md f
 
 ## Credits
 
-A list of people or resources that helped contribute to my project.
+A list of people or resources that helped realizing my projects.
 
 ## License
 
