@@ -17,7 +17,3 @@ If you would like to contribute to my project, please read the CONTRIBUTING.md f
 
 A list of people or resources that helped realizing my projects.
 
-## License
-
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-
