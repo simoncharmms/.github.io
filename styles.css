@@ -90,12 +90,6 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
-table, th, td {
-  border-collapse: collapse; 
-  border: 1px solid black; 
-  margin: 10px; 
-}
-
 hr {
   margin: 1rem 0;
   color: inherit;
