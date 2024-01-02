@@ -48,12 +48,12 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html#page-top">Hi there, my name is Simon!</a>
+                <a class="navbar-brand" href="index.html#page-top">Hi there, welcome to Simon's homepage!</a>
                 <button class="navbar-toggler navbar-toggler-right collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="navbar-collapse collapse" id="navbarResponsive" style="">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="index.html#portfolio">My PhD</a></li>
-                        <li class="nav-item"><a class="nav-link" href="index.html#about">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#about">My other projects</a></li>
                         <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -64,68 +64,55 @@
             <div class="container px-4 px-lg-5 h-100">
                 <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
                     <div class="col-lg-8 align-self-end">
-                        <h1 class="text-white font-weight-bold">I am currently working on my PhD</h1>
+                        <h1 class="text-white font-weight-bold">Feel free to brew!</h1>
                         <hr class="divider">
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">In my PhD, I focus on Explainable Artificial Intelligence (XAI) and Interpretable Machine Learning (IML).</p>
-                        <a class="btn btn-primary btn-xl" href="https://scholar.google.com/citations?user=pcp_olIAAAAJ">Check my publications</a>
+                        <p class="text-white-75 mb-5">You can use the table below to track the amount of unpaid shots. Your data is only stored in your browser.</p>
+                                <!-- Table--> 
+                                <script>
+                                var counter = 0;
+                                function addRow() {
+                                    var table = document.getElementById("editableTable");
+                                    var row = table.insertRow(-1);
+                                    var cell1 = row.insertCell(0);
+                                    var cell2 = row.insertCell(1);
+                                    var cell3 = row.insertCell(2);
+                                    cell1.contentEditable = "true";
+                                    cell2.innerHTML = '<button onclick="incrementCounter(this)">0</button>';
+                                    cell3.innerHTML = '<button onclick="resetCounter(this)">Paid</button>';
+                                    saveTable();
+                                }
+                                function incrementCounter(button) {
+                                    counter++;
+                                    button.innerHTML = counter;
+                                    saveTable();
+                                }
+                                function resetCounter(button) {
+                                    counter = 0;
+                                    var row = button.parentNode.parentNode;
+                                    var counterCell = row.cells[1].children[0];
+                                    counterCell.innerHTML = counter;
+                                    saveTable();
+                                }
+                                function saveTable() {
+                                    var table = document.getElementById("editableTable");
+                                    localStorage.setItem("table", table.innerHTML);
+                                }
+                                function loadTable() {
+                                    var storedTable = localStorage.getItem("table");
+                                    if (storedTable) {
+                                        document.getElementById("editableTable").innerHTML = storedTable;
+                                    }
+                                }
+                                window.onload = loadTable;
+                                </script>
+                        <a class="btn btn-primary btn-xl" href="https://paypal.me/SimonSchramm96?country.x=DE&locale.x=de_DE">Pay via PayPal</a>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- About-->
-        <section class="page-section bg-primary" id="about">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-8 text-center">
-                        <h2 class="text-white mt-0">In love with coffee?</h2>
-                        <hr class="divider divider-light">
-                        <p class="text-white-75 mb-4">I love coffee and run a little barista project for me and my colleagues. Would you like to join?</p>
-                        <a class="btn btn-light btn-xl" href="https://simoncharmms.github.io/home/coffee">Join us here</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- Services-->
-        
-    <script>
-        var counter = 0;
-        function addRow() {
-            var table = document.getElementById("editableTable");
-            var row = table.insertRow(-1);
-            var cell1 = row.insertCell(0);
-            var cell2 = row.insertCell(1);
-            var cell3 = row.insertCell(2);
-            cell1.contentEditable = "true";
-            cell2.innerHTML = '<button onclick="incrementCounter(this)">0</button>';
-            cell3.innerHTML = '<button onclick="resetCounter(this)">Paid</button>';
-            saveTable();
-        }
-        function incrementCounter(button) {
-            counter++;
-            button.innerHTML = counter;
-            saveTable();
-        }
-        function resetCounter(button) {
-            counter = 0;
-            var row = button.parentNode.parentNode;
-            var counterCell = row.cells[1].children[0];
-            counterCell.innerHTML = counter;
-            saveTable();
-        }
-        function saveTable() {
-            var table = document.getElementById("editableTable");
-            localStorage.setItem("table", table.innerHTML);
-        }
-        function loadTable() {
-            var storedTable = localStorage.getItem("table");
-            if (storedTable) {
-                document.getElementById("editableTable").innerHTML = storedTable;
-            }
-        }
-        window.onload = loadTable;
-    </script>
+
 </head>
 <body>
     <table id="editableTable">
