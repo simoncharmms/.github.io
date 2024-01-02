@@ -19,17 +19,31 @@
             cell2.contentEditable = "true";
             cell3.innerHTML = '<button onclick="incrementCounter(this)">0</button>';
             cell4.innerHTML = '<button onclick="resetCounter(this)">Reset</button>';
+            saveTable();
         }
         function incrementCounter(button) {
             counter++;
             button.innerHTML = counter;
+            saveTable();
         }
         function resetCounter(button) {
             counter = 0;
             var row = button.parentNode.parentNode;
             var counterCell = row.cells[2].children[0];
             counterCell.innerHTML = counter;
+            saveTable();
         }
+        function saveTable() {
+            var table = document.getElementById("editableTable");
+            localStorage.setItem("table", table.innerHTML);
+        }
+        function loadTable() {
+            var storedTable = localStorage.getItem("table");
+            if (storedTable) {
+                document.getElementById("editableTable").innerHTML = storedTable;
+            }
+        }
+        window.onload = loadTable;
     </script>
 </head>
 <body>
