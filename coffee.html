@@ -107,23 +107,22 @@
                                 }
                                 window.onload = loadTable;
                                 </script>
+                                <table id="editableTable">
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Shot counter</th>
+                                    <th>Mark as paid (resets the shot counter)</th>
+                                </tr>
+                                </table>
+                                <!-- Payment-->
+                                <button onclick="addRow()">Add Row</button>
                         <a class="btn btn-primary btn-xl" href="https://paypal.me/SimonSchramm96?country.x=DE&locale.x=de_DE">Pay via PayPal</a>
                     </div>
                 </div>
             </div>
         </header>
-
 </head>
 <body>
-    <table id="editableTable">
-        <tr>
-            <th>Name</th>
-            <th>Shot counter</th>
-            <th>Mark as paid (resets the shot counter)</th>
-        </tr>
-    </table>
-    <button onclick="addRow()">Add Row</button>
-    
 </section>
 <!-- Footer-->
 <footer class="bg-light py-5">
