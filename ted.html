@@ -19,19 +19,30 @@
             right: 0;
             height: 100%;
             width: 100%;
-            opacity: 1;
-            transition: .5s ease;
             background-color: black;
-        }
-        #container:hover #overlay {
-            opacity: 0;
         }
     </style>
 </head>
 <body>
     <div id="container">
         <img id="image" src="image.jpg" alt="Image">
-        <div id="overlay"></div>
+        <canvas id="overlay"></canvas>
     </div>
+    <script>
+        const overlay = document.getElementById('overlay');
+        const ctx = overlay.getContext('2d');
+        const image = document.getElementById('image');
+        image.onload = function() {
+            overlay.width = image.width;
+            overlay.height = image.height;
+            ctx.fillStyle = 'black';
+            ctx.fillRect(0, 0, overlay.width, overlay.height);
+        }
+        overlay.addEventListener('mousemove', function(e) {
+            ctx.globalCompositeOperation = 'destination-out';
+            ctx.arc(e.offsetX, e.offsetY, 10, 0, Math.PI * 2, false);
+            ctx.fill();
+        });
+    </script>
 </body>
 </html>
