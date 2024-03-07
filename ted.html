@@ -39,7 +39,9 @@
             ctx.fillRect(0, 0, overlay.width, overlay.height);
         }
         overlay.addEventListener('mousemove', function(e) {
+            console.log('Mouse move event triggered');
             ctx.globalCompositeOperation = 'destination-out';
+            ctx.beginPath();
             ctx.arc(e.offsetX, e.offsetY, 10, 0, Math.PI * 2, false);
             ctx.fill();
         });
