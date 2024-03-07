@@ -2,29 +2,36 @@
 <html>
 <head>
     <style>
-        body {
-            background-color: darkgrey;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
+        #container {
+            position: relative;
+            display: inline-block;
         }
-        .heartbeat {
-            color: white;
-            font-size: 2em;
-            animation: heartbeat 1s infinite;
+        #image {
+            display: block;
+            width: 100%;
+            height: auto;
         }
-        @keyframes heartbeat {
-            0% { transform: scale(1); }
-            75% { transform: scale(1.01); }
-            100% { transform: scale(1); }
+        #overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            width: 100%;
+            opacity: 1;
+            transition: .5s ease;
+            background-color: black;
+        }
+        #container:hover #overlay {
+            opacity: 0;
         }
     </style>
 </head>
 <body>
-    <div class="heartbeat">
-        давайте поговорим о китайском Новом годе в этом месяце.
+    <div id="container">
+        <img id="image" src="image.jpg" alt="Image">
+        <div id="overlay"></div>
     </div>
 </body>
 </html>
