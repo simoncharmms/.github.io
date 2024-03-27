@@ -1,40 +1,11 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <style>
-        body {
-            background-color: black;
-        }
-        #container {
-            position: relative;
-            display: inline-block;
-        }
-        #image {
-            display: block;
-            width: 100%;
-            height: auto;
-        }
-        #overlay {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            width: 100%;
-            opacity: 1;
-            transition: .5s ease;
-            background-color: black;
-        }
-        #container:hover #overlay {
-            opacity: 0;
-        }
-    </style>
-</head>
-<body>
-    <div id="container">
-        <img id="image" src="image.jpg" alt="Image">
-        <div id="overlay"></div>
-    </div>
-</body>
+    <body style="text-align: center">
+        <h2>Do you know that sound?</h2>
+        <video width="500px" height="400px" controls="controls">
+        <source 
+src="https://media.geeksforgeeks.org/wp-content/uploads/20231020155223/Full-Stack-Development-_-
+     LIVE-Classes-_-GeeksforGeeks.mp4" 
+                type="video/mp4" />
+       </video>
+    </body>
 </html>
